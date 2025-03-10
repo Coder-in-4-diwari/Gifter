@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,35 +16,13 @@
         android:layout_centerHorizontal="true"
         android:paddingBottom="20dp"/>
 
-    <Button
-        android:id="@+id/btnFlowers"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Flowers"
-        android:padding="10dp"
-        android:backgroundTint="@android:color/holo_red_light"
+        android:layout_height="0dp"
         android:layout_below="@id/tvTitle"
-        android:layout_marginTop="16dp"/>
-
-    <Button
-        android:id="@+id/btnBouquets"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Bouquets"
-        android:padding="10dp"
-        android:backgroundTint="@android:color/holo_orange_light"
-        android:layout_below="@id/btnFlowers"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:id="@+id/btnGifts"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gifts"
-        android:padding="10dp"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:layout_below="@id/btnBouquets"
-        android:layout_marginTop="10dp"/>
+        android:layout_above="@id/fabCart"
+        android:paddingTop="16dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabCart"
@@ -54,5 +31,5 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_cart" /> <!-- Add a cart icon -->
+        android:src="@drawable/ic_cart" />
 </RelativeLayout>

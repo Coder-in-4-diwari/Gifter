@@ -7,8 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CartAdapter(private val cartItems: List<Product>) :
-    RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+class CartAdapter(
+    private val cartItems: List<Product>
+) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivProductImage: ImageView = itemView.findViewById(R.id.ivProductImage)
@@ -27,8 +28,8 @@ class CartAdapter(private val cartItems: List<Product>) :
         val product = cartItems[position]
         holder.tvName.text = product.name
         holder.tvPrice.text = product.price
-        holder.ivProductImage.setImageResource(product.imageResId)
         holder.tvQuantity.text = "Quantity: ${product.quantity}"
+        holder.ivProductImage.setImageResource(product.imageResId)
     }
 
     override fun getItemCount() = cartItems.size

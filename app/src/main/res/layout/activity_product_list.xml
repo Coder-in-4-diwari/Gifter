@@ -7,15 +7,18 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/tvCategory"
+        android:id="@+id/tvCategoryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:text="Products"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:paddingBottom="16dp"/>
+        android:paddingBottom="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:contentDescription="List of products"
+        android:importantForAccessibility="yes"/>
 </LinearLayout>

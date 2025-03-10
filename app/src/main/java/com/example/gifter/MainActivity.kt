@@ -1,42 +1,36 @@
 package com.example.gifter
-
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnFlowers: Button = findViewById(R.id.btnFlowers)
-        val btnBouquets: Button = findViewById(R.id.btnBouquets)
-        val btnGifts: Button = findViewById(R.id.btnGifts)
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         val fabCart: FloatingActionButton = findViewById(R.id.fabCart)
 
-        btnFlowers.setOnClickListener {
-            val intent = Intent(this, ProductListActivity::class.java)
-            intent.putExtra("category", "Flowers")
-            startActivity(intent)
-        }
-
-        btnBouquets.setOnClickListener {
-            val intent = Intent(this, ProductListActivity::class.java)
-            intent.putExtra("category", "Bouquets")
-            startActivity(intent)
-        }
-
-        btnGifts.setOnClickListener {
-            val intent = Intent(this, ProductListActivity::class.java)
-            intent.putExtra("category", "Gifts")
-            startActivity(intent)
-        }
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        val adapter = CategoryAdapter(getCategories())
+        recyclerView.adapter = adapter
+        adapter.notifyDataSetChanged()
 
         fabCart.setOnClickListener {
-            val intent = Intent(this, CartActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, CartActivity::class.java))
         }
     }
+
+    private fun getCategories(): List<Category> {
+        return listOf(
+            Category("Flowers", R.drawable.flowers, ProductListActivity::class.java, "Flowers"),
+            Category("Bouquets", R.drawable.bouquet, ProductListActivity::class.java, "Bouquets"),
+            Category("Gifts", R.drawable.gifts, ProductListActivity::class.java, "Gifts")
+        )
+    }
+
 }
