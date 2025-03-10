@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Flower and Gift Shop"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnFlowers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Flowers"
+        android:padding="10dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnBouquets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bouquets"
+        android:padding="10dp"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:layout_below="@id/btnFlowers"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnGifts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gifts"
+        android:padding="10dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:layout_below="@id/btnBouquets"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_cart" /> <!-- Add a cart icon -->
+</RelativeLayout>
